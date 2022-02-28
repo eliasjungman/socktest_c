@@ -17,6 +17,7 @@ int main() {
     while(1) {
         int socket = create_socket();
         free_socket(socket);
+        //turn_timeout(socket);
 
         bind_socket(socket, PORT);
         listen(socket, LISTEN_COUNT);

@@ -6,6 +6,7 @@
 
 int create_socket();
 void free_socket(int client_socket);
+void turn_timeout(int sockfd);
 char *read_data(int client_socket);
 void send_data(int client_socket, char *string);
 

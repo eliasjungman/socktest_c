@@ -23,6 +23,18 @@ void free_socket(int client_socket) {
     setsockopt(client_socket, SOL_SOCKET, SO_REUSEADDR | SO_REUSEPORT, &opt, sizeof(opt));
 }
 
+void turn_timeout(int sockfd) {
+    //https://linux.die.net/man/2/setsockopt
+    // "copy paste" code
+    // https://github.com/moret/socket-read-timeout/blob/master/client.c
+    struct timeval tv;
+    tv.tv_sec = 20;
+    tv.tv_usec = 0;
+    setsockopt(sockfd, SOL_SOCKET, SO_RCVTIMEO, &tv, sizeof(tv));
+    setsockopt(sockfd, SOL_SOCKET, SO_SNDTIMEO, &tv, sizeof(tv));
+
+}
+
 char *read_data(int client_socket) {
     char *data = "";
     while(1) {
