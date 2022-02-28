@@ -39,7 +39,7 @@ char *read_data(int client_socket) {
             printf("data: %s\n", buffer);
             fflush(stdout);
             //data += buffer;
-            char *data = concat(data, buffer);
+            data = concat(data, buffer);
             if (strcmp(buffer, ESCAPE_CHAR) == 0) {
                 return data;
             }
