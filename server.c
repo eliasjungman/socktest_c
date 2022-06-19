@@ -5,8 +5,8 @@
 
 void bind_socket(int client_socket, int port) {
     struct sockaddr_in address;
-    address.sin_family = SIN_FAMILY;
-    address.sin_addr.s_addr = SIN_ADDR;
+    address.sin_family = AF_INET;
+    address.sin_addr.s_addr = INADDR_ANY;
     address.sin_port = htons(port);
 
     int addrlen = sizeof(address);
