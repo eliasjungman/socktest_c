@@ -7,7 +7,7 @@
 int conn_socket(int client_socket, char *ip, int port) {
     struct sockaddr_in server;
 
-    server.sin_family = SIN_FAMILY;
+    server.sin_family = AF_INET;
     server.sin_port = htons(port);
 
     if(inet_pton(SIN_FAMILY, ip, &server.sin_addr) <= 0) {
