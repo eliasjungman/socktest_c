@@ -17,7 +17,7 @@ void uhandler_read(int socket1) {
         n = recvfrom(socket1, buffer, BUFFER, MSG_WAITALL, (struct sockaddr *) &cliaddr, &len);
         printf("socket: %d, ip: %s, port: %d\n", socket1, inet_ntoa(cliaddr.sin_addr), ntohs(cliaddr.sin_port));
         buffer[n] = '\0';
-        printf("user enters: %s\n", buffer);
+        printf("%s\n", buffer);
         fflush(stdout);
 
     }
@@ -41,7 +41,7 @@ void uhandler_write(int socket1) {
         size_t bufsize;
 
         getline(&buffer, &bufsize, stdin);
-        printf("you typed: %s\n", buffer);
+        //printf("you typed: %s\n", buffer);
        	sendto(socket1, (const char *)buffer, strlen(buffer),
 		MSG_CONFIRM, (const struct sockaddr *) &servaddr,
 			sizeof(servaddr));

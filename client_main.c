@@ -15,7 +15,7 @@ void handler(int client_socket) {
 
     while(1) {
         char *data = read_data(client_socket);
-        printf("user enters: %s\n", data);
+        printf("%s\n", data);
         fflush(stdout);
 
         if (data == NULL) {

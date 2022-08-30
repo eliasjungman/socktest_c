@@ -11,7 +11,7 @@ void handler_read(int client_socket) {
             break;
         }
 
-        printf("user enters: %s\n", data);
+        printf("%s\n", data);
         fflush(stdout);
     }
 }
@@ -22,7 +22,7 @@ void handler_write(int client_socket) {
         size_t bufsize;
 
         getline(&buffer, &bufsize, stdin);
-        printf("you typed: %s\n", buffer); // debugging printf (trash?)
+        //printf("you typed: %s\n", buffer); // debugging printf (trash?)
 
         send_data(client_socket, buffer);
     }
