@@ -11,7 +11,7 @@ void handler_read(int client_socket) {
             break;
         }
 
-        printf("%s\n", data);
+        printf("%s", data);
         fflush(stdout);
     }
 }

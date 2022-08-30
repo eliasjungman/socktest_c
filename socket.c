@@ -44,12 +44,12 @@ char *read_data(int client_socket) {
             printf("read_data: closed\n");
             return NULL;
         } else if (reader != BUFFER_SIZE) {
-            printf("data: %s\n", buffer);
+            //printf("data: %s\n", buffer);
             printf("read_data: reader != BUFFER_SIZE\n");
             return NULL;
         } else {
-            printf("data: %s\n", buffer);
-            fflush(stdout);
+            //printf("data: %s\n", buffer);
+            //fflush(stdout);
             //data += buffer;
             data = concat(data, buffer);
             if (strcmp(buffer, ESCAPE_CHAR) == 0) {
