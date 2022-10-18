@@ -5,6 +5,7 @@
 #include <unistd.h> // read?
 #include <stdio.h>
 
+// https://www.ibm.com/docs/en/i/7.2?topic=sscaaiic-example-accepting-connections-from-both-ipv6-ipv4-clients
 int create_socket() {
     // https://man7.org/linux/man-pages/man2/socket.2.html
     // int socket(int domain, int type, int protocol);
