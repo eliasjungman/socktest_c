@@ -10,7 +10,7 @@ int conn_socket(int client_socket, char *ip, int port) {
     server.sin_family = AF_INET;
     server.sin_port = htons(port);
 
-    if(inet_pton(SIN_FAMILY, ip, &server.sin_addr) <= 0) {
+    if(inet_pton(server.sin_family, ip, &server.sin_addr) <= 0) {
         printf("Invalid address\n");
         return 1;
     }
